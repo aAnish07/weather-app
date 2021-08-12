@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Favicon -->
+    <!-- <link rel="favicon" href="favicon.ico"> -->
+    <title>Weather | <%= city %>
+    </title>
+</head>
+
+<body>
+    <div id="searchBar">
+        <input type="text" id="city" placeholder="Search City" required>
+        <button id="mkReq"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                clip-rule="evenodd">
+                <path
+                    d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z" />
+            </svg>
+        </button>
+    </div>
+
+    <section>
+        <main>
+            <div id="data1">
+                <div>
+                    <img src="<%= iconURL %> " alt="Weather Icon" id="icon">
+                </div>
+                <h1 id="temp">
+                    <%= Math.round(temp) %> &deg;C
+                </h1>
+            </div>
+
+            <div id="data2">
+                <p id="comment">
+                    <%= comment %>
+                </p>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
+                    </svg>
+                </span>
+                <span id="loc">
+                    <%= city %>
+                </span>
+            </div>
+        </main>
+    </section>
+
+    <script src="../app.js"></script>
+</body>
+
+</html>
