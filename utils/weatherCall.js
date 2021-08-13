@@ -10,7 +10,8 @@ module.exports = async function openWeatherCALL(cityName, { baseURL, key }) {
             }
         });
         return data;
-    } catch (e) {
-        console.dir(e);
+    } catch (error) {
+        console.dir(error);
+        return error;
     }
 }

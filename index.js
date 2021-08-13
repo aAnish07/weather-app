@@ -20,11 +20,15 @@ app.get('/', (req, res) => {
 
 app.get('/weather/:city', async (req, res) => {
     const { city } = req.params;
-    const response = await request(city, config);
-    res.render('data', {
-        city: response.name,
-        temp: response.main.temp,
-        iconURL: `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
-        comment: response.weather[0].main
-    })
+    try {
+        const response = await request(city, config);
+        res.render('data', {
+            city: response.name,
+            temp: response.main.temp,
+            iconURL: `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
+            comment: response.weather[0].main
+        })
+    } catch {
+        res.render('error');
+    }
 })
